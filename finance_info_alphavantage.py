@@ -41,8 +41,9 @@ st.markdown("""
         margin-bottom: 20px;
     }
     .data-timestamp {
-        font-size: 14px;
+        font-size: 16px;
         color: #616161;
+        font-weight: bold;  /* Make the date bold */
     }
 </style>
 """, unsafe_allow_html=True)
@@ -113,8 +114,10 @@ if symbol:
         now = datetime.now(pytz.timezone("US/Pacific"))
         formatted_time = now.strftime("%a %b %d %H:%M:%S %Z %Y")
         
-        # Display stock information
+        # Display date in bold
         st.markdown(f"<div class='data-timestamp'>{formatted_time}</div>", unsafe_allow_html=True)
+        
+        # Display stock information
         st.markdown(f"<div class='info-box'>", unsafe_allow_html=True)
         
         # Company name and symbol
